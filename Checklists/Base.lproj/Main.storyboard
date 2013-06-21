@@ -68,11 +68,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cxM-IC-cft">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of Item" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cxM-IC-cft">
                                                     <rect key="frame" x="20" y="7" width="280" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <action selector="done" destination="2pp-Ht-nzE" eventType="editingDidEndOnExit" id="RHG-DH-9kJ"/>
+                                                        <outlet property="delegate" destination="2pp-Ht-nzE" id="e9q-jk-8uT"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -93,13 +97,14 @@
                                 <action selector="cancel" destination="2pp-Ht-nzE" id="onm-tu-xN3"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Zq2-MX-F0L">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="Zq2-MX-F0L">
                             <connections>
                                 <action selector="done" destination="2pp-Ht-nzE" id="lNp-qL-CRU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneBarButton" destination="Zq2-MX-F0L" id="0KN-H7-qFR"/>
                         <outlet property="textField" destination="cxM-IC-cft" id="zYj-bg-YJ6"/>
                     </connections>
                 </tableViewController>
@@ -146,6 +151,23 @@
             <point key="canvasLocation" x="983" y="-198"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AddItemViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddItemViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel"/>
+                <relationship kind="action" name="done"/>
+                <relationship kind="outlet" name="doneBarButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ChecklistsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChecklistsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addItem"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
