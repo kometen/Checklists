@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		482079F2176FB5F500F4CA5F /* ChecklistItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 482079F1176FB5F500F4CA5F /* ChecklistItem.m */; };
 		482079F3176FB5F500F4CA5F /* ChecklistItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 482079F1176FB5F500F4CA5F /* ChecklistItem.m */; };
-		482079F6177399DF00F4CA5F /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 482079F5177399DF00F4CA5F /* AddItemViewController.m */; };
-		482079F7177399DF00F4CA5F /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 482079F5177399DF00F4CA5F /* AddItemViewController.m */; };
+		482079F6177399DF00F4CA5F /* ItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 482079F5177399DF00F4CA5F /* ItemDetailViewController.m */; };
+		482079F7177399DF00F4CA5F /* ItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 482079F5177399DF00F4CA5F /* ItemDetailViewController.m */; };
 		487F3D8E176D14E500E62587 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487F3D8D176D14E500E62587 /* Foundation.framework */; };
 		487F3D90176D14E500E62587 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487F3D8F176D14E500E62587 /* CoreGraphics.framework */; };
 		487F3D92176D14E500E62587 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487F3D91176D14E500E62587 /* UIKit.framework */; };
@@ -40,8 +40,8 @@
 /* Begin PBXFileReference section */
 		482079F0176FB5F500F4CA5F /* ChecklistItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChecklistItem.h; sourceTree = "<group>"; };
 		482079F1176FB5F500F4CA5F /* ChecklistItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChecklistItem.m; sourceTree = "<group>"; };
-		482079F4177399DF00F4CA5F /* AddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItemViewController.h; sourceTree = "<group>"; };
-		482079F5177399DF00F4CA5F /* AddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItemViewController.m; sourceTree = "<group>"; };
+		482079F4177399DF00F4CA5F /* ItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ItemDetailViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		482079F5177399DF00F4CA5F /* ItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ItemDetailViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		487F3D8A176D14E500E62587 /* Checklists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		487F3D8D176D14E500E62587 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		487F3D8F176D14E500E62587 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -54,7 +54,7 @@
 		487F3D9D176D14E500E62587 /* ChecklistsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChecklistsAppDelegate.m; sourceTree = "<group>"; };
 		487F3DA0176D14E500E62587 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		487F3DA2176D14E500E62587 /* ChecklistsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChecklistsViewController.h; sourceTree = "<group>"; };
-		487F3DA3176D14E500E62587 /* ChecklistsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChecklistsViewController.m; sourceTree = "<group>"; };
+		487F3DA3176D14E500E62587 /* ChecklistsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ChecklistsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		487F3DA5176D14E500E62587 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		487F3DAB176D14E500E62587 /* ChecklistsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChecklistsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		487F3DAC176D14E500E62587 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -120,8 +120,8 @@
 		487F3D93176D14E500E62587 /* Checklists */ = {
 			isa = PBXGroup;
 			children = (
-				482079F4177399DF00F4CA5F /* AddItemViewController.h */,
-				482079F5177399DF00F4CA5F /* AddItemViewController.m */,
+				482079F4177399DF00F4CA5F /* ItemDetailViewController.h */,
+				482079F5177399DF00F4CA5F /* ItemDetailViewController.m */,
 				482079F0176FB5F500F4CA5F /* ChecklistItem.h */,
 				482079F1176FB5F500F4CA5F /* ChecklistItem.m */,
 				487F3D9C176D14E500E62587 /* ChecklistsAppDelegate.h */,
@@ -265,7 +265,7 @@
 				487F3D9A176D14E500E62587 /* main.m in Sources */,
 				487F3D9E176D14E500E62587 /* ChecklistsAppDelegate.m in Sources */,
 				487F3DA4176D14E500E62587 /* ChecklistsViewController.m in Sources */,
-				482079F6177399DF00F4CA5F /* AddItemViewController.m in Sources */,
+				482079F6177399DF00F4CA5F /* ItemDetailViewController.m in Sources */,
 				482079F2176FB5F500F4CA5F /* ChecklistItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,7 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				487F3DB9176D14E500E62587 /* ChecklistsTests.m in Sources */,
-				482079F7177399DF00F4CA5F /* AddItemViewController.m in Sources */,
+				482079F7177399DF00F4CA5F /* ItemDetailViewController.m in Sources */,
 				482079F3176FB5F500F4CA5F /* ChecklistItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
