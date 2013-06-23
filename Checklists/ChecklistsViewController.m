@@ -54,13 +54,8 @@
     return  self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    
-    NSLog(@"Documents-folder is %@", [self documentsDirectory]);
-    NSLog(@"Data file path is %@", [self dataFilePath]);
-
 }
 
 - (void)didReceiveMemoryWarning
