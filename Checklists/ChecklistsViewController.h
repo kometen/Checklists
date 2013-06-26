@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ItemDetailViewController.h"
 
-@interface ChecklistViewController : UITableViewController <ItemDetailViewControllerDelegate>
+@interface ChecklistsViewController : UITableViewController <ItemDetailViewControllerDelegate>
 
 @end
