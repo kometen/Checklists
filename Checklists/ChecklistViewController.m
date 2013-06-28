@@ -8,6 +8,7 @@
 
 #import "ChecklistViewController.h"
 #import "ChecklistItem.h"
+#import "Checklist.h"
 
 @interface ChecklistViewController ()
 
@@ -56,6 +57,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = self.checklist.name;
 }
 
 - (void)didReceiveMemoryWarning

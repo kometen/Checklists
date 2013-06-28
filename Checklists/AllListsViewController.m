@@ -7,6 +7,7 @@
 //
 
 #import "AllListsViewController.h"
+#import "ChecklistViewController.h"
 #import "Checklist.h"
 
 @interface AllListsViewController ()
@@ -72,8 +73,16 @@
     return cell;
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"ShowChecklist"]) {
+        ChecklistViewController *controller = segue.destinationViewController;
+        controller.checklist = sender;
+    }
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"ShowChecklist" sender:nil];
+    Checklist *checklist = [lists objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"ShowChecklist" sender:checklist];
 }
 
 /*
