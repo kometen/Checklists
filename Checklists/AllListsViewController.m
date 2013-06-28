@@ -7,31 +7,43 @@
 //
 
 #import "AllListsViewController.h"
+#import "Checklist.h"
 
 @interface AllListsViewController ()
 
 @end
 
-@implementation AllListsViewController
+@implementation AllListsViewController {
+    NSMutableArray *lists;
+}
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
+-(id)initWithCoder:(NSCoder *)aDecoder {
+    if ((self = [super initWithCoder:aDecoder])) {
+        lists = [[NSMutableArray alloc] initWithCapacity:20];
+        
+        Checklist *checklist;
+        
+        checklist = [[Checklist alloc] init];
+        checklist.name = @"Fødselsdage";
+        [lists addObject:checklist];
+        
+        checklist = [[Checklist alloc] init];
+        checklist.name = @"Indkøb";
+        [lists addObject:checklist];
+        
+        checklist = [[Checklist alloc] init];
+        checklist.name = @"Smarte programmer";
+        [lists addObject:checklist];
+        
+        checklist = [[Checklist alloc] init];
+        checklist.name = @"Opgaver";
+        [lists addObject:checklist];
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,7 +55,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return [lists count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -52,7 +64,11 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"List %d", indexPath.row];
+    
+    Checklist *checklist = [lists objectAtIndex:indexPath.row];
+    cell.textLabel.text = checklist.name;
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    
     return cell;
 }
 
