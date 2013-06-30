@@ -8,6 +8,7 @@
 
 #import "AllListsViewController.h"
 #import "ChecklistViewController.h"
+#import "ChecklistItem.h"
 #import "Checklist.h"
 
 @interface AllListsViewController ()
@@ -39,6 +40,12 @@
         checklist = [[Checklist alloc] init];
         checklist.name = @"Opgaver";
         [lists addObject:checklist];
+        
+        for (Checklist *list in lists) {
+            ChecklistItem *item = [[ChecklistItem alloc] init];
+            item.text = [NSString stringWithFormat:@"Item for %@", list.name];
+            [list.items addObject:item];
+        }
     }
     return self;
 }
