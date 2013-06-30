@@ -19,33 +19,39 @@
     NSMutableArray *lists;
 }
 
+-(NSString *)documentsDirectory {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return documentsDirectory;
+}
+
+-(NSString *)dataFilePath {
+    return [[self documentsDirectory] stringByAppendingPathComponent:@"Checklists.plist"];
+}
+
+-(void)saveChecklists {
+    NSMutableData *data = [[NSMutableData alloc] init];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+    [archiver encodeObject:lists forKey:@"Checklists"];
+    [archiver finishEncoding];
+    [data writeToFile:[self dataFilePath] atomically:YES];
+}
+
+-(void)loadChecklists {
+    NSString *path = [self dataFilePath];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+        NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+        lists = [unarchiver decodeObjectForKey:@"Checklists"];
+        [unarchiver finishDecoding];
+    } else {
+        lists = [[NSMutableArray alloc] initWithCapacity:20];
+    }
+}
+
 -(id)initWithCoder:(NSCoder *)aDecoder {
     if ((self = [super initWithCoder:aDecoder])) {
-        lists = [[NSMutableArray alloc] initWithCapacity:20];
-        
-        Checklist *checklist;
-        
-        checklist = [[Checklist alloc] init];
-        checklist.name = @"Fødselsdage";
-        [lists addObject:checklist];
-        
-        checklist = [[Checklist alloc] init];
-        checklist.name = @"Indkøb";
-        [lists addObject:checklist];
-        
-        checklist = [[Checklist alloc] init];
-        checklist.name = @"Smarte programmer";
-        [lists addObject:checklist];
-        
-        checklist = [[Checklist alloc] init];
-        checklist.name = @"Opgaver";
-        [lists addObject:checklist];
-        
-        for (Checklist *list in lists) {
-            ChecklistItem *item = [[ChecklistItem alloc] init];
-            item.text = [NSString stringWithFormat:@"Item for %@", list.name];
-            [list.items addObject:item];
-        }
+        [self loadChecklists];
     }
     return self;
 }
