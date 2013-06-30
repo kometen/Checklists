@@ -117,4 +117,13 @@
     [tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"ListNavigationController"];
+    ListDetailViewController *controller = (ListDetailViewController *)navigationController.topViewController;
+    controller.delegate = self;
+    Checklist *checklist = [lists objectAtIndex:indexPath.row];
+    controller.checklistToEdit = checklist;
+    [self presentViewController:navigationController animated:YES completion:nil];
+}
+
 @end
