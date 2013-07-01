@@ -25,7 +25,7 @@
 -(void)saveData {
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     AllListsViewController *controller = (AllListsViewController *)[navigationController.viewControllers objectAtIndex:0];
-    [controller saveChecklists];
+    [controller.dataModel saveChecklists];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
