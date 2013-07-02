@@ -10,7 +10,7 @@
 #import "ListDetailViewController.h"
 #import "DataModel.h"
 
-@interface AllListsViewController : UITableViewController <ListDetalViewControllerDelegate>
+@interface AllListsViewController : UITableViewController <ListDetalViewControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) DataModel *dataModel;
 

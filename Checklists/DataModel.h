@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Checklist.h"
 
 @interface DataModel : NSObject
 
 @property (nonatomic, strong) NSMutableArray *lists;
 
 -(void)saveChecklists;
+-(int)indexOfSelectedChecklist;
+-(void)setIndexOfSelectedChecklist:(int)index;
 
 @end
