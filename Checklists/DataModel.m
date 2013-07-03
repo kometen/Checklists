@@ -76,4 +76,8 @@
     [[NSUserDefaults standardUserDefaults] setInteger:index forKey:@"ChecklistIndex"];
 }
 
+-(void)sortChecklist {
+    [self.lists sortUsingSelector:@selector(compare:)];
+}
+
 @end

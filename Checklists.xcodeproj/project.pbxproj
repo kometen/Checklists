@@ -19,7 +19,6 @@
 		487F3D9E176D14E500E62587 /* ChecklistsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 487F3D9D176D14E500E62587 /* ChecklistsAppDelegate.m */; };
 		487F3DA1176D14E500E62587 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487F3D9F176D14E500E62587 /* Main.storyboard */; };
 		487F3DA4176D14E500E62587 /* ChecklistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487F3DA3176D14E500E62587 /* ChecklistViewController.m */; };
-		487F3DA6176D14E500E62587 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 487F3DA5176D14E500E62587 /* Images.xcassets */; };
 		487F3DAD176D14E500E62587 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487F3DAC176D14E500E62587 /* XCTest.framework */; };
 		487F3DAE176D14E500E62587 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487F3D8D176D14E500E62587 /* Foundation.framework */; };
 		487F3DAF176D14E500E62587 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487F3D91176D14E500E62587 /* UIKit.framework */; };
@@ -31,6 +30,8 @@
 		48908DE9177F83BC007A75C3 /* ListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48908DE7177F83BC007A75C3 /* ListDetailViewController.m */; };
 		48908DEC178189AE007A75C3 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 48908DEB178189AE007A75C3 /* DataModel.m */; };
 		48908DED178189AE007A75C3 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 48908DEB178189AE007A75C3 /* DataModel.m */; };
+		48908DEF17847D7F007A75C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48908DEE17847D7F007A75C3 /* Images.xcassets */; };
+		48908DF017847D7F007A75C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48908DEE17847D7F007A75C3 /* Images.xcassets */; };
 		48DCD6ED177E0CAF0026BB8F /* AllListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCD6EC177E0CAF0026BB8F /* AllListsViewController.m */; };
 		48DCD6EE177E0CAF0026BB8F /* AllListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCD6EC177E0CAF0026BB8F /* AllListsViewController.m */; };
 /* End PBXBuildFile section */
@@ -63,7 +64,6 @@
 		487F3DA0176D14E500E62587 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		487F3DA2176D14E500E62587 /* ChecklistViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChecklistViewController.h; sourceTree = "<group>"; };
 		487F3DA3176D14E500E62587 /* ChecklistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ChecklistViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		487F3DA5176D14E500E62587 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		487F3DAB176D14E500E62587 /* ChecklistsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChecklistsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		487F3DAC176D14E500E62587 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		487F3DB4176D14E500E62587 /* ChecklistsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChecklistsTests-Info.plist"; sourceTree = "<group>"; };
@@ -75,6 +75,7 @@
 		48908DE7177F83BC007A75C3 /* ListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListDetailViewController.m; sourceTree = "<group>"; };
 		48908DEA178189AE007A75C3 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		48908DEB178189AE007A75C3 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		48908DEE17847D7F007A75C3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		48DCD6EB177E0CAF0026BB8F /* AllListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllListsViewController.h; sourceTree = "<group>"; };
 		48DCD6EC177E0CAF0026BB8F /* AllListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllListsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +137,7 @@
 		487F3D93176D14E500E62587 /* Checklists */ = {
 			isa = PBXGroup;
 			children = (
+				48908DEE17847D7F007A75C3 /* Images.xcassets */,
 				482079F4177399DF00F4CA5F /* ItemDetailViewController.h */,
 				482079F5177399DF00F4CA5F /* ItemDetailViewController.m */,
 				48908DE2177E3670007A75C3 /* Checklist.h */,
@@ -153,7 +155,6 @@
 				48DCD6EC177E0CAF0026BB8F /* AllListsViewController.m */,
 				48908DE6177F83BC007A75C3 /* ListDetailViewController.h */,
 				48908DE7177F83BC007A75C3 /* ListDetailViewController.m */,
-				487F3DA5176D14E500E62587 /* Images.xcassets */,
 				487F3D94176D14E500E62587 /* Supporting Files */,
 			);
 			path = Checklists;
@@ -265,7 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				487F3DA6176D14E500E62587 /* Images.xcassets in Resources */,
+				48908DEF17847D7F007A75C3 /* Images.xcassets in Resources */,
 				487F3D98176D14E500E62587 /* InfoPlist.strings in Resources */,
 				487F3DA1176D14E500E62587 /* Main.storyboard in Resources */,
 			);
@@ -276,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				487F3DB7176D14E500E62587 /* InfoPlist.strings in Resources */,
+				48908DF017847D7F007A75C3 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
