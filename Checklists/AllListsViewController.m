@@ -65,6 +65,7 @@
     Checklist *checklist = [self.dataModel.lists objectAtIndex:indexPath.row];
     int count = [checklist countUncheckedItems];
     cell.textLabel.text = checklist.name;
+    cell.imageView.image = [UIImage imageNamed:checklist.iconName];
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     if ([checklist.items count] == 0) {
         cell.detailTextLabel.text = @"(No Items)";
